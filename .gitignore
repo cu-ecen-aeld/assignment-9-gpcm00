@@ -3,3 +3,6 @@ build/
 .vscode/
 *.log
 writer
+aesdsocket
+check_log.sh
+test.sh.log
