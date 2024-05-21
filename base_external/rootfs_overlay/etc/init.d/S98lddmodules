@@ -1,0 +1,21 @@
+#/bin/sh
+
+if [ "$2" == "-test" ]
+then
+    working_dir=$(realpath $(dirname $0))
+else
+    working_dir=/usr/bin
+fi
+
+case "$1" in
+    start)
+        echo "Starting ldd modules"
+        ;;
+    stop)
+        ;;
+    *)
+        echo "Usage $0 {start|stop}"
+    exit 1
+    esac
+
+exit 0

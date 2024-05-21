@@ -1,0 +1,5 @@
+
+config BR2_PACKAGE_LDD_ASSIGNMENTS
+	bool "ldd"
+	help
+	  Includes the Linux Device Driver modules
