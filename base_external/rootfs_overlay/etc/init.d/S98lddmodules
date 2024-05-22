@@ -1,17 +1,18 @@
 #/bin/sh
 
-if [ "$2" == "-test" ]
-then
-    working_dir=$(realpath $(dirname $0))
-else
-    working_dir=/usr/bin
-fi
-
 case "$1" in
     start)
-        echo "Starting ldd modules"
+        echo "Loading scull module"
+        scull_load
+        echo "Loading faulty module"
+        module_load faulty
+        echo "Loading hello module"
+        modprobe hello.ko
         ;;
     stop)
+    	scull_unload
+    	module_load faulty
+    	rmmod hello
         ;;
     *)
         echo "Usage $0 {start|stop}"
