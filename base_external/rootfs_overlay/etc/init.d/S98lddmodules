@@ -2,17 +2,11 @@
 
 case "$1" in
     start)
-        echo "Loading scull module"
-        scull_load
-        echo "Loading faulty module"
-        module_load faulty
-        echo "Loading hello module"
-        modprobe hello.ko
+        echo "Loading aesdchar module"
+        module_load aesdchar
         ;;
     stop)
-    	scull_unload
-    	module_load faulty
-    	rmmod hello
+    	module_load aesdchar
         ;;
     *)
         echo "Usage $0 {start|stop}"
